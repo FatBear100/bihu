@@ -5,6 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bihu.css">
     <script src="js/jquery-3.5.1.min.js" type="application/javascript"></script>
     <script src="js/bootstrap.min.js" type="application/javascript"></script>
 </head>
@@ -13,7 +14,8 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">逼乎社区</span>
             </button>
             <a class="navbar-brand" href="#">逼乎社区</a>
@@ -44,25 +46,36 @@
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12"></div>
+</nav>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
             <h2><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>发起</h2>
             <hr>
             <form action="">
                 <div class="form-group">
-                    <label for="title">问题标题</label>
-                    <input type="tet" class="form-control" id="title" placeholder="问题标题__">
+                    <label for="title">问题标题:</label>
+                    <input type="tet" class="form-control" id="title" name="title" placeholder="问题标题__">
                 </div>
                 <div class="form-group">
-                    <label for="title">问题补充</label>
-                    <textarea name="desc" id="desc" class="form-control" cols="30" rows="10" ></textarea>
+                    <label for="title">问题补充:</label>
+                    <textarea name="desc" id="desc" class="form-control" cols="30" rows="10"></textarea>
                 </div>
+                <div class="form-group">
+                    <label for="title">添加标签:</label>
+                    <input type="text" class="form-control" id="tag" name="tag" placeholder="输入标签，以逗号(，)隔开">
+                </div>
+                <button type="submit" class="btn btn-success btn-publish">发布</button>
             </form>
-            <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12"></div>
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+            <h3>问题发起指南</h3>
+            一段废话说明<br>
+            另一段废话说明<br>
+            还是一段废话说明<br>
+            统统都是废话说明<br>
         </div>
     </div>
-
-</nav>
+</div>
 </body>
 </html>
