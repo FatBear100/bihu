@@ -1,9 +1,10 @@
-package com.ted.bihu.model;
+package com.ted.bihu.dto;
 
+import com.ted.bihu.model.User;
 import lombok.Data;
 
 @Data
-public class Question {
+public class QuestionDTO {
     private int id;
     private String title;
     private String desc;
@@ -14,4 +15,5 @@ public class Question {
     private int viewCount;
     private int commentCount;
     private int likeCount;
+    private User user;
 }
