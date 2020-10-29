@@ -1,5 +1,6 @@
 package com.ted.bihu.service;
 
+import com.ted.bihu.dto.PageDTO;
 import com.ted.bihu.dto.QuestionDTO;
 import com.ted.bihu.mapper.QuestionMapper;
 import com.ted.bihu.mapper.UserMapper;
@@ -19,9 +20,19 @@ public class QuestionService {
     @Autowired
     private QuestionMapper questionMapper;
 
-    public List<QuestionDTO> list() {
+    public PageDTO list(Integer page, Integer size) {
+        PageDTO pageDTO = new PageDTO();
+        int totalCount = questionMapper.count();
+        pageDTO.setPage(totalCount, page, size);
+        if (page < 1) {
+            page = 1;
+        }
+        if (page > pageDTO.getTotalPage()) {
+            page = pageDTO.getTotalPage();
+        }
+        int offset = size * (page - 1);
         List<QuestionDTO> questionDTOS = new ArrayList<>();
-        List<Question> questionList = questionMapper.list();
+        List<Question> questionList = questionMapper.list(offset, size);
         for (Question question : questionList) {
             User user = userMapper.findById(question.getCreator());
             QuestionDTO questionDTO = new QuestionDTO();
@@ -29,6 +40,8 @@ public class QuestionService {
             questionDTO.setUser(user);
             questionDTOS.add(questionDTO);
         }
-        return questionDTOS;
+        pageDTO.setQuestionDTOS(questionDTOS);
+
+        return pageDTO;
     }
 }
