@@ -16,19 +16,8 @@ public class PageDTO {
     private List<Integer> pages = new ArrayList<>();
     private int totalPage;
 
-    public void setPage(int totalCount, Integer page, Integer size) {
-        if (totalCount % size != 0) {
-            totalPage = totalCount / size + 1;
-        } else {
-            totalPage = totalCount / size;
-        }
-        if (page < 1) {
-            page = 1;
-        }
-
-        if (page > totalPage) {
-            page = totalPage;
-        }
+    public void setPage(int totalPage, Integer page) {
+        this.totalPage = totalPage;
         this.page = page;
         pages.add(page);
         for (int i = 1; i <= 3; i++) {
